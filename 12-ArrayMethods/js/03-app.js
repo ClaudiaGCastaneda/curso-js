@@ -24,10 +24,67 @@ const carrito = [
 
 let total = 0;
 carrito.forEach( producto => total += producto.precio );
-console.log(total);
+//console.log(total);
 
 // Puedes ver que si bien no se ve mal, podemos tenerlo todo en una sola linea con un .reduce
                             
                             // total, actual
 let resultado = carrito.reduce((total, producto) => total + producto.precio, 0); //0 es el inicio
-console.log( resultado );
+//console.log( resultado );
+
+
+const entero = 9875;
+
+const array = entero.toString().split('');
+//console.log ( array);
+
+let sum = array.reduce(( total, numero) => total + Number(numero), 0);
+//console.log('sum ' + sum);
+//console.log(sum.toString().length);
+
+const superDigit = (n, i) => { 
+    console.log(`Datos de entrada: ${k} ${i}` );
+
+    let j = 0;
+    let newNumber  = '';
+
+    while ( j  < i){
+        newNumber =  newNumber.toString().concat(n);
+        j++;
+    }
+
+    console.log('newNumber antes del do ' + newNumber);
+
+
+    do {
+        console.log('newNumber ' + newNumber) ;
+       // const digitsArray = newNumber.toString().split('');
+        newNumber = newNumber.toString().split('').reduce((total, numero) => total + parseInt(numero), 0);
+        console.log(`vuelta: ${l} ${newNumber} ${newNumber.toString().length}` );
+
+    } while( newNumber >= 10);
+    
+
+    console.log('the madig digit is ' + newNumber);
+    
+    // while (totalNumeros >= 1){
+
+    //    console.log('tamaño mayor a uno');
+
+    //     totalNumeros = sum.toString().length;
+
+    // }
+
+
+    //console.log(`sum ${sum}`);
+    //console.log(`totalNumeros ${totalNumeros}`);
+
+    
+
+
+
+};
+
+
+superDigit(9875, 2);
+
